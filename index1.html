@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A sample colorful HTML project for beginners">
+  <meta name="keywords" content="HTML, beginner, learning, example, colorful">
+  <title>My First Colorful HTML Project</title>
+  <style>
+    /* Page background */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #a18cd1, #fbc2eb);
+      color: #222;
+      min-height: 100vh;
+    }
+
+    /* Colorful Header and Footer */
+    header, footer {
+      background: linear-gradient(90deg, #43cea2, #185a9d);
+      color: white;
+      padding: 25px 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Navigation bar with hover effect */
+    nav {
+      background: #fff3cc;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(255,145,144,0.12);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      margin: 0 18px;
+      text-decoration: none;
+      color: #e94057;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.2s;
+      padding: 3px 16px;
+      border-radius: 21px;
+    }
+    nav a:hover {
+      background: #e94057;
+      color: #fff;
+    }
+
+    /* Section styling */
+    section {
+      margin: 28px auto;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 4px 16px rgba(67,206,162,0.10);
+      border-radius: 16px;
+      padding: 24px 30px;
+      width: 80%;
+      max-width: 780px;
+    }
+    section h2 {
+      color: #185a9d;
+      margin-top: 0;
+    }
+    section h3 {
+      color: #e94057;
+      margin-top: 22px;
+    }
+
+    /* Highlight, Mark, Strong text */
+    .highlight, mark {
+      color: #185a9d;
+      background: #fff3cc;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    strong {
+      color: #e94057;
+    }
+
+    /* Images style */
+    img {
+      box-shadow: 0 3px 14px rgba(67,206,162,0.15);
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    /* Table style */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      background: #fff3cc;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th {
+      background: #185a9d;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+    }
+    td {
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #e7e7e7;
+    }
+    caption {
+      background: #e94057;
+      color: #fff;
+      font-weight: bold;
+      padding: 6px;
+      font-size: 1.1em;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    /* List styles */
+    ul {
+      padding-left: 26px;
+    }
+    ul li {
+      margin-bottom: 7px;
+      color: #e94057;
+      font-weight: 500;
+    }
+    ol {
+      padding-left: 24px;
+    }
+    ol li {
+      margin-bottom: 7px;
+      color: #185a9d;
+      font-weight: 500;
+    }
+    dl dt {
+      color: #e94057;
+      font-weight: bold;
+    }
+    dl dd {
+      color: #333;
+      margin-bottom: 7px;
+      padding-left: 16px;
+    }
+
+    /* Form styling */
+    form {
+      background: #fbc2eb44;
+      padding: 18px;
+      border-radius: 13px;
+      box-shadow: 0 2px 10px rgba(67,206,162,0.06);
+    }
+    input[type="text"], input[type="password"], textarea, select {
+      font-size: 1em;
+      margin-top: 3px;
+      margin-bottom: 13px;
+      border-radius: 7px;
+      border: 1px solid #185a9d44;
+      padding: 7px;
+      background: #fff;
+      color: #185a9d;
+      box-sizing: border-box;
+      width: 240px;
+    }
+    select {
+      width: 140px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    input[type="checkbox"], input[type="radio"] {
+      margin-right: 9px;
+      accent-color: #e94057;
+    }
+    button {
+      padding: 8px 22px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #e94057, #185a9d);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1em;
+      box-shadow: 0 1px 6px rgba(67,206,162,0.09);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #185a9d, #e94057);
+    }
+
+    /* Media and iframe styling */
+    audio, video {
+      display: block;
+      margin-top: 9px;
+      margin-bottom: 13px;
+    }
+    iframe {
+      border-radius: 10px;
+      border: 3px solid #a18cd1;
+      margin-top: 10px;
+    }
+
+    /* HTML5 features canvas and SVG */
+    #myCanvas {
+      margin: 12px auto 0 auto;
+      display: block;
+      background: #f0f0f0;
+      border: 2px solid #e94057;
+      border-radius: 7px;
+    }
+    svg {
+      margin-top: 15px;
+      display: block;
+      box-shadow: 0 2px 7px rgba(67,206,162,0.12);
+      border-radius: 7px;
+      background: #fff3cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>🌐 My Colorful HTML Mini Project</h1>
+    <p><em>A vibrant example webpage using all major HTML features</em></p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#list">Lists</a>
+    <a href="#table">Table</a>
+    <a href="#form">Form</a>
+    <a href="#media">Media</a>
+    <a href="#html5">HTML5 Features</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- About Section -->
+    <section id="about">
+      <h2>About This Page</h2>
+      <p>
+        This page demonstrates <strong>important HTML concepts</strong> for beginners.
+        You will see examples of <mark>text formatting</mark>, links, images, lists, forms, multimedia, and HTML5 features.
+      </p>
+      <img src="https://via.placeholder.com/200" alt="Placeholder Image" width="200">
+    </section>
+
+    <!-- Lists Section -->
+    <section id="list">
+      <h2>Types of Lists</h2>
+      
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Oranges</li>
+      </ul>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>Wake up</li>
+        <li>Brush teeth</li>
+        <li>Have breakfast</li>
+      </ol>
+
+      <h3>Definition List</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+      </dl>
+    </section>
+
+    <!-- Table Section -->
+    <section id="table">
+      <h2>Student Marks Table</h2>
+      <table>
+        <caption>Marks of Students</caption>
+        <tr>
+          <th>Name</th>
+          <th>Marks</th>
+        </tr>
+        <tr>
+          <td>Alice</td>
+          <td>95</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>88</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form">
+      <h2>Contact Form</h2>
+      <form>
+        <p>Name:<br>
+          <input type="text" name="name" placeholder="Enter your name"></p>
+        <p>Password:<br>
+          <input type="password" name="password" placeholder="Enter password"></p>
+        <p>Message:<br>
+          <textarea rows="3" cols="30" name="message" placeholder="Write something..."></textarea>
+        </p>
+        <p>Choose a topic:
+          <select>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+          </select>
+        </p>
+        <p>
+          <input type="checkbox"> Subscribe to Newsletter
+        </p>
+        <p>
+          Gender:
+          <input type="radio" name="gender" id="male">
+          <label for="male">Male</label> 
+          <input type="radio" name="gender" id="female">
+          <label for="female">Female</label>
+        </p>
+        <p><button type="submit">Submit</button></p>
+      </form>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media">
+      <h2>Multimedia Examples</h2>
+      <p>Audio:</p>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+
+      <p>Video:</p>
+      <video controls width="300">
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <p>Embedded Website (iframe):</p>
+      <iframe src="https://www.example.com" width="300" height="200"></iframe>
+    </section>
+
+    <!-- HTML5 Features -->
+    <section id="html5">
+      <h2>HTML5 Features</h2>
+
+      <h3>Canvas (Blue Rectangle)</h3>
+      <canvas id="myCanvas" width="200" height="100"></canvas>
+
+      <h3>SVG (Red Circle)</h3>
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+      </svg>
+
+      <h3>LocalStorage</h3>
+      <button onclick="saveName()" type="button">Save Name</button>
+      <button onclick="showName()" type="button">Show Name</button>
+
+      <h3>Geolocation</h3>
+      <button onclick="getLocation()" type="button">Get My Location</button>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 My Colorful HTML Mini Project | Built with <span style="color:#e94057;">♥</span></p>
+  </footer>
+
+  <!-- JavaScript for HTML5 Features -->
+  <script>
+    // Canvas Drawing
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 150, 50);
+
+    // Local Storage Example
+    function saveName() {
+      localStorage.setItem("name", "Alice");
+      alert("Name saved!");
+    }
+    function showName() {
+      alert("Saved Name: " + localStorage.getItem("name"));
+    }
+
+    // Geolocation Example
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          alert("Latitude: " + position.coords.latitude + 
+                ", Longitude: " + position.coords.longitude);
+        }, function() {
+          alert("Unable to access location.");
+        });
+      } else {
+        alert("Geolocation not supported on this browser.");
+      }
+    }
+  </script>
+</body>
+</html>
